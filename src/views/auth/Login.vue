@@ -50,7 +50,7 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
-const authStore = useAuthStore()
+const auth = useAuthStore()
 
 const username = ref('')
 const password = ref('')
@@ -62,7 +62,7 @@ const handleLogin = async () => {
   error.value = false
   
   try {
-    const success = authStore.login(username.value, password.value)
+    const success = auth.login(username.value, password.value)
     if (success) {
       await router.push('/')
     } else {

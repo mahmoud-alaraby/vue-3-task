@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import router from "../router";
 
 export const useAuthStore = defineStore("auth", () => {
   const isAuthenticated = ref(false);
@@ -21,7 +22,7 @@ export const useAuthStore = defineStore("auth", () => {
   function logout() {
     isAuthenticated.value = false;
     user.value = "";
-    localStorage.removeItem("isAuthenticated");
+    router.push('/login');
   }
 
   return {

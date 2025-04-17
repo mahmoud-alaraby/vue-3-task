@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-if="authStore.isAuthenticated" v-model="drawer">
+    <v-navigation-drawer v-if="auth.check" v-model="drawer">
       <v-list>
         <v-list-item
           v-for="item in menuItems"
@@ -14,13 +14,13 @@
 
     <v-app-bar>
       <v-app-bar-nav-icon
-        v-if="authStore.isAuthenticated"
+        v-if="auth.check"
         @click="drawer = !drawer"
       />
-      <v-app-bar-title>Vue Evaluation</v-app-bar-title>
+      <v-app-bar-title>Vue 3 Task</v-app-bar-title>
       <v-spacer />
       <v-btn
-        v-if="authStore.isAuthenticated"
+        v-if="auth.check"
         icon
         @click="handleLogout"
       >
@@ -37,10 +37,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/auth'
+import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
-const authStore = useAuthStore()
+const auth = useAuthStore()
 const drawer = ref(true)
 
 const menuItems = [
@@ -50,7 +50,6 @@ const menuItems = [
 ]
 
 const handleLogout = () => {
-  authStore.logout()
-  router.push('/login')
+  auth.logout()
 }
 </script>
