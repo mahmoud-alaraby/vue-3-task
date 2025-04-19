@@ -6,7 +6,7 @@
         <v-card>
           <v-card-text>
             <p class="text-body-1">
-              You are logged in as: {{ authStore.username }}
+              You are logged in as: {{ authStore.user.name }}
             </p>
           </v-card-text>
         </v-card>

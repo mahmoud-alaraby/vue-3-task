@@ -4,17 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.38",
-    "vuetify": "^3.5.2",
-    "pinia": "^2.1.7",
-    "vue-router": "^4.2.5",
+    "@mdi/font": "^7.4.47",
     "axios": "^1.6.7",
-    "@mdi/font": "^7.4.47"
+    "pinia": "^2.1.7",
+    "vue": "^3.4.38",
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.5.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.3",

@@ -8,32 +8,12 @@
           </v-card-title>
           <v-card-text>
             <v-form @submit.prevent="handleLogin">
-              <v-text-field
-                v-model="username"
-                label="Username"
-                prepend-icon="mdi-account"
-                required
-              />
-              <v-text-field
-                v-model="password"
-                label="Password"
-                type="password"
-                prepend-icon="mdi-lock"
-                required
-              />
-              <v-alert
-                v-if="error"
-                type="error"
-                class="mb-4"
-              >
+              <v-text-field v-model="username" label="Username" prepend-icon="mdi-account" required />
+              <v-text-field v-model="password" label="Password" type="password" prepend-icon="mdi-lock" required />
+              <v-alert v-if="error" type="error" class="mb-4">
                 Invalid username or password
               </v-alert>
-              <v-btn
-                color="primary"
-                block
-                type="submit"
-                :loading="loading"
-              >
+              <v-btn color="primary" block type="submit" :loading="loading">
                 Login
               </v-btn>
             </v-form>
@@ -60,7 +40,7 @@ const loading = ref(false)
 const handleLogin = async () => {
   loading.value = true
   error.value = false
-  
+
   try {
     const success = auth.login(username.value, password.value)
     if (success) {

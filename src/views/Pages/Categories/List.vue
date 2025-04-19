@@ -6,6 +6,7 @@
         :headers="headers"
         :items="users"
         :loading="loading"
+        hide-default-footer
       >
         <template v-slot:top>
           <v-toolbar flat>

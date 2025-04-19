@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import Login from '../views/auth/Login.vue'
-import Home from '../views/Home/index.vue'
-import Categories from '../views/Categories.vue'
-import Products from '../views/Products/List.vue'
-import ProductDetails from '../views/Products/Details.vue'
+import Home from '../views/Pages/Home/index.vue'
+import Categories from '../views/Pages/Categories/List.vue'
+import Products from '../views/Pages/Products/List.vue'
+import ProductDetails from '../views/Pages/Products/Details.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -42,11 +42,11 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore()
+  const auth = useAuthStore()
   
-  if (to.meta.requiresAuth && !authStore.check) {
+  if (to.meta.requiresAuth && !auth.check) {
     next('/login')
-  } else if (to.path === '/login' && authStore.check) {
+  } else if (to.path === '/login' && auth.check) {
     next('/')
   } else {
     next()
