@@ -4,13 +4,12 @@
             <v-icon icon="mdi-arrow-left"></v-icon> Back to Products
         </router-link>
          <v-divider class="my-5"></v-divider>
-        <h3 class="text-h3 my-5">{{ product.title }}</h3>
+        <h3 class="text-h5 my-5">{{ product.title }}</h3>
 
         <v-card>
-            <v-img width="50%" :src="`https://picsum.photos/id/${product.id}/400/300`"></v-img>
+            <v-img width="50%" class="rounded" :src="`https://picsum.photos/id/${product.id}/400/300`"></v-img>
             <v-card-title></v-card-title>
             <v-card-text>{{ product.body }}</v-card-text>
-
         </v-card>
     </v-container>
 </template>

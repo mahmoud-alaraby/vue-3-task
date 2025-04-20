@@ -1,25 +1,19 @@
 <template>
   <v-container>
-    <h1 class="text-h3 mb-6">Products (Posts)</h1>
+    <h4 class="text-h4 my-6">Products (Posts)</h4>
     <v-row>
-      <v-col
-        v-for="post in posts"
-        :key="post.id"
-        cols="12"
-        sm="6"
-        md="4"
-      >
+      <v-col v-for="product in products" :key="product.id" cols="12" sm="6" md="4">
         <v-card>
-          <v-card-title>{{ post.title }}</v-card-title>
-          <v-card-text>{{ post.body }}</v-card-text>
-          <v-card-actions>
-            <router-link
-              :to="{ name: 'product-details', params: { id: post.id } }"
-              class="text-decoration-none"
-              color="primary"
-              variant="text"
-            >
-              Read More
+          <v-img width="100%" :src="`https://picsum.photos/id/${product.id}/400/300`"></v-img>
+          <v-card-title>{{ product.title }}</v-card-title>
+          <v-card-subtitle class="text-h6">{{ product.body }}</v-card-subtitle>
+          <v-card-actions class="d-flex justify-end">
+            <router-link :to="{ name: 'product-details', params: { id: product.id } }" class="text-decoration-none"
+              color="primary" variant="text">
+              <v-btn color="primary" variant="text">
+                Read More
+                <v-icon icon="mdi-arrow-right"></v-icon>
+              </v-btn>
             </router-link>
           </v-card-actions>
         </v-card>
@@ -32,12 +26,12 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-const posts = ref([])
+const products = ref([])
 
 onMounted(async () => {
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    posts.value = response.data
+    products.value = response.data
   } catch (error) {
     console.error('Error fetching posts:', error)
   }

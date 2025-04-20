@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="text-h3 mb-6">Categories (Users)</h1>
+    <h4 class="text-h4 my-6">Categories (Users)</h4>
     <v-card>
       <v-data-table
         :headers="headers"

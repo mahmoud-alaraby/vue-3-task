@@ -9,8 +9,16 @@ export const useAuthStore = defineStore("auth", () => {
   function login(username: string, password: string): boolean {
     if (username === "admin" && password === "admin") {
       isAuthenticated.value = true;
-      user.value = { name: username, role: "admin" };
-      localStorage.setItem("auth", JSON.stringify({ isAuthenticated: true }));
+      user.value = {
+        fullName: "Mahmoud Araby",
+        email: "araby4dev@gmail.com",
+        username,
+        role: "admin",
+      };
+      localStorage.setItem(
+        "auth",
+        JSON.stringify({ isAuthenticated: true, user: user.value })
+      );
       return true;
     }
     return false;
@@ -28,6 +36,7 @@ export const useAuthStore = defineStore("auth", () => {
     if (data) {
       const parsed = JSON.parse(data);
       isAuthenticated.value = parsed.isAuthenticated || false;
+      user.value = parsed.user || {};
     }
   }
 
@@ -35,7 +44,7 @@ export const useAuthStore = defineStore("auth", () => {
 
   return {
     check: isAuthenticated,
-    user,
+    user: user,
     login,
     logout,
   };
