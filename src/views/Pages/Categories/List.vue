@@ -35,7 +35,7 @@ const headers = [
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+    const response = await axios.get('/users')
     users.value = response.data
   } catch (error) {
     console.error('Error fetching users:', error)

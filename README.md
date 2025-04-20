@@ -1,5 +1,25 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite Project
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project is a Vue 3 application built with TypeScript and Vite. It includes features such as authentication, product and category management, and a dashboard interface. The project uses Vuetify for UI components and Pinia for state management.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+- **Authentication**: Login/logout functionality.
+- **Dashboard**: Overview of products, categories, and users.
+- **Products Management**: View a list of products and detailed product information.
+- **Categories Management**: View a list of categories (users).
+- **Responsive Design**: Built with Vuetify for a modern and responsive UI.
+
+## Project Structure
+- **`src/`**: Contains the source code for the application.
+  - **`views/`**: Vue components for pages like login, products, and categories.
+  - **`stores/`**: Pinia stores for state management.
+  - **`router/`**: Vue Router configuration.
+  - **`plugins/`**: Vuetify plugin setup.
+  - **`components/`**: Shared components like the app layout.
+- **`docs/`**: Documentation files for setup, usage, and development.
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:mahmoud-alaraby/vue-3-task.git
+   cd assessment

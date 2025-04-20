@@ -30,7 +30,7 @@ const products = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const response = await axios.get('/posts')
     products.value = response.data
   } catch (error) {
     console.error('Error fetching posts:', error)

@@ -26,7 +26,7 @@ const product = ref([])
 
 const fetchProduct = async () => {
     try {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${route.params.id}`)
+        const response = await axios.get(`/posts/${route.params.id}`)
         product.value = response.data
     } catch (error) {
         console.error('Error fetching product:', error)
