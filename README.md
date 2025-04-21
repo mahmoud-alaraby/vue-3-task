@@ -16,7 +16,7 @@ This project is a Vue 3 application built with TypeScript and Vite. It includes 
   - **`router/`**: Vue Router configuration.
   - **`plugins/`**: Vuetify plugin setup.
   - **`components/`**: Shared components like the app layout.
-- **`docs/`**: Documentation files for setup, usage, and development.
+- **`public/`**: public and assets files for setup, usage, and development.
 
 ## Installation
 1. Clone the repository:
