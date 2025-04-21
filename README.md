@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite Project
+# Vue 3 + vuetify
 
 This project is a Vue 3 application built with TypeScript and Vite. It includes features such as authentication, product and category management, and a dashboard interface. The project uses Vuetify for UI components and Pinia for state management.
 
