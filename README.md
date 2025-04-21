@@ -21,5 +21,7 @@ This project is a Vue 3 application built with TypeScript and Vite. It includes 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone git@github.com:mahmoud-alaraby/vue-3-task.git
-   cd assessment
+   git clone git@github.com:mahmoud-alaraby/vue-3-task.git vue_assessment
+   cd vue_assessment
+   bun install
+   bun run dev
